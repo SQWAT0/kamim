@@ -10,6 +10,7 @@ local MenuElements = {
 
 }
 window:NextColumn()
+Log.Warn("This is test version")
 local Createmove = function ()
     if MenuElements.Sunsetmode:GetValue() then
         ConVars.sunset_override:SetInt(1)
