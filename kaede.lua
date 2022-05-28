@@ -7,10 +7,17 @@ local ConVars = {
 }
 local MenuElements = {
     Sunsetmode = window:AddCheckbox("Sunset mode", false),
+    MvmRecorded = window:AddCheckbox("Mvm Records [Download]", false)
+}
+local Windows = {
+    User = os.getenv("USERNAME"),
 
 }
 window:NextColumn()
-Log.Warn("This is test version")
+ChatScriptPrint = function (text)
+    return Utils.ChatPrint(string.format("kaede + | %s", text))
+end
+ChatScriptPrint(Windows.User..", stay kawai with us!")
 local Createmove = function ()
     if MenuElements.Sunsetmode:GetValue() then
         ConVars.sunset_override:SetInt(1)
